@@ -19,16 +19,15 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
   "Hello, " + name
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  /^[a-z&&[^aeiou]]/i =~ s
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  s.to_s == "0" or /^[01]*00$/ =~ s.to_s
 end
 
 # Part 3
