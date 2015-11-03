@@ -33,5 +33,29 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  attr_reader :isbn, :price
+  
+  def initialize(isbn, price)
+    if (price <= 0)
+      raise ArgumentError, "Invalid price", caller
+    end
+    if (isbn.length == 0)
+      raise ArgumentError, "Invalid ISBN", caller
+    end
+    @isbn = isbn
+    @price = Float(price)
+  end
+  
+  def price=(new_price)
+    @price = new_price
+  end
+
+  def isbn=(new_isbn)
+    @isbn = new_isbn
+  end
+  
+  def price_as_string
+    '$' + "%.2f" % price
+  end
+
 end
